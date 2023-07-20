@@ -13,6 +13,6 @@ mongodump --authenticationDatabase=admin --username= --password= --db=admin --ou
 # Set the number of backups to keep
 num_backups_to_keep=3
 
-# Remove backups more than 3
+# Remove backups
 cd $BACKUP_DIR
 ls -1t | grep "^mongodb_backup_" | tail -n +$((num_backups_to_keep+1)) | xargs -d '\n' rm -R -f
