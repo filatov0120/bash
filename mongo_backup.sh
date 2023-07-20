@@ -15,4 +15,4 @@ num_backups_to_keep=3
 
 # Remove backups more than 3
 cd $BACKUP_DIR
-ls -1t | grep "^mongodb_backup_" | tail -n +4 | xargs -d '\n' rm -R -f
+ls -1t | grep "^mongodb_backup_" | tail -n +$((num_backups_to_keep+1)) | xargs -d '\n' rm -R -f
